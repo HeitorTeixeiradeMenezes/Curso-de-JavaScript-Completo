@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabuada Loops</title>
 </head>
-<body>
+<body style="font-family: sans-serif;">
     
     <style>
+        
         h1{
             font-size: 20px;
             font-weight: normal;
@@ -17,10 +18,18 @@
     ul{
         padding-left: 1px;
         padding-bottom: 1px;
+        background-color: rgba(102, 102, 96, 0.459);
+        width: 160px;
         
     }
     li{
         margin-left: 20px; 
+    }
+    .forul{
+            width: 380px;
+        }
+    p{
+        color: rgb(52, 150, 39);
     }
         
         </style>
@@ -28,7 +37,9 @@
         E suas variaveis sao:
         <li><b>let numero</b></li>
         <li><b>let indicie = 0</b></li>
-    </ul></p>
+        <li><b>while(indicie <11)</b></li>
+    </ul>
+    <p>Resultado:</p>
 
     <script>
         let numero = prompt("digite um numero")
@@ -37,23 +48,38 @@
             document.write(`${indicie} x ${numero} = ${indicie * numero} <br>`) 
             indicie ++
             if(indicie == 11){
-            document.write(`saiu do loop while <br>`)
+            document.write(`saiu do loop <b>while</b> <hr>`)
             }
         }
     </script>
-    
+
+    <h1>Exemplo de Loop com <b>do while</b></h1> <ul>
+        E suas variaveis sao:
+        <li><b>let numero</b></li>
+        <li><b>let indicie2 = 15</b></li>
+        <li><b>while(indicie <11)</b></li>
+    </ul>
+    <p>Resultado:</p>
         
-        let indicie2 = 15
+        <script> indicie2 = 15
         do{
-            document.write(`${indicie} x ${numero} = ${indicie * numero} <br>`)
+            document.write(`${indicie2} x ${numero} = ${indicie * numero} <br>`)
             indicie++ 
         }while(indicie <11)
-        document.write(`saiu do loop <b>do</b> while <br>`)
-        
+        document.write(`saiu do loop <b>do</b> while <hr>`)
+        </script>
+    <h1>Exemplo de Loop com <b>for</b></h1> <ul class="forul">
+        E suas variaveis sao:
+        <li><b>for(let indicie3 = 0; indicie3 <=10; indicie3++)</b></li>
+    </ul>
+    <p>Resultado:</p>
+
+        <script>
         for(let indicie3 = 0; indicie3 <=10; indicie3++){
             document.write(`${indicie3} x ${numero} = ${indicie3 * numero} <br>`) 
         }
-        document.write(`saiu do loop for <br>`)
+        document.write(`saiu do loop <b>for</b> <hr>`)
+        
         
          </script>
 
