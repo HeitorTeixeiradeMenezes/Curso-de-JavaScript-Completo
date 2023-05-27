@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada Loops</title>
+</head>
+<body>
+    
+    <style>
+        h1{
+            font-size: 20px;
+            font-weight: normal;
+            
+        }
+    ul{
+        padding-left: 1px;
+        padding-bottom: 1px;
+        
+    }
+    li{
+        margin-left: 20px; 
+    }
+        
+        </style>
+    <h1>Exemplo de Loop com <b>while</b></h1> <ul>
+        E suas variaveis sao:
+        <li><b>let numero</b></li>
+        <li><b>let indicie = 0</b></li>
+    </ul></p>
+
+    <script>
+        let numero = prompt("digite um numero")
+        let indicie = 0
+        while(indicie <11){
+            document.write(`${indicie} x ${numero} = ${indicie * numero} <br>`) 
+            indicie ++
+            if(indicie == 11){
+            document.write(`saiu do loop while <br>`)
+            }
+        }
+    </script>
+    
+        
+        let indicie2 = 15
+        do{
+            document.write(`${indicie} x ${numero} = ${indicie * numero} <br>`)
+            indicie++ 
+        }while(indicie <11)
+        document.write(`saiu do loop <b>do</b> while <br>`)
+        
+        for(let indicie3 = 0; indicie3 <=10; indicie3++){
+            document.write(`${indicie3} x ${numero} = ${indicie3 * numero} <br>`) 
+        }
+        document.write(`saiu do loop for <br>`)
+        
+         </script>
+
+    
+    
+</body>
+</html>
