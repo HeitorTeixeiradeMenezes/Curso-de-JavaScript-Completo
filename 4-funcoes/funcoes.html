@@ -12,19 +12,19 @@
     <script>
         // declaracao de funcao
         function ola(){
-            document.write("olamundo")
+            document.write("olamundo <br>")
         }
         ola()
 
         // expressao de funcao
         const ola2 = function(){
-            console.log(`olamundo em funciton expression`)
+            document.write(`olamundo em funciton expression <br>`)
         }
         ola2()
 
         // arrow functions
         const ola3 = () => {
-            console.log(`ola mundo com arrow functions`)
+            document.write(`ola mundo com arrow functions <br>`)
         }
         ola3()
 
@@ -33,16 +33,16 @@
             return new Date() .getDay()
         }
         let dia = obterdiasemana()
-        console.log(`dia da semana = ${dia}`)
+        document.write(`dia da semana = ${dia} <br>`)
 
         // Retorno 
         function somar(n1 = 0, n2 = 0) {
             return n1 + n2
         }
         let soma = somar(3, 5,)
-        console.log(soma)
+        document.write(`${soma}<br>`);
 
-        console.log(somar(10, 7))
+        document.write(`${somar(10, 7)}<br>`);
     
     </script>
     
