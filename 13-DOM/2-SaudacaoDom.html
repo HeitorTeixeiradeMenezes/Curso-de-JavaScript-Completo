@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Seja Bem vindo(a) </p>
+    <p>Manipulado com o DOM negrito nome: </p>
+    <p>Nenhum nome na variavel GRRRRRRR :(</p>
+
+    <script>
+        let nome = "Josiane";
+        let elemento = document.querySelectorAll("p");
+        if(nome){
+            elemento[0].textContent = "Seja Bem vindo(a) " + nome;
+            elemento[1].innerHTML += "<b>" + nome + "</b>";
+            elemento[2].style.display = "none";
+        } else{
+            elemento[0].style.display = "none";
+            elemento[1].style.display = "none";
+            elemento[2].style.fontSize = "50px"
+        }
+        
+
+    </script>
+</body>
+</html>
