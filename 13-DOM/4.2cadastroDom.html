@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    visibility: visible;
+}
+
+</style>
+<body>
+
+    <h1>Cadastro De Usuario</h1>
+
+    <div>
+        <h2>Selecione o nome de usuario</h2>
+        <label for="usuario">Usuario</label>
+        <input type="text" id="username" disabled value="Josiane24" onblur="bloquear()" >
+        <input type="button" id="editar" value="Editar" onclick="editar()">
+        <input type="button" value="Enviar" onclick="usuario()">
+        <div class="printFinal"></div>
+    </div>
+    
+
+    <script src="4.1cadastroDom.js"></script>
+</body>
+</html>
