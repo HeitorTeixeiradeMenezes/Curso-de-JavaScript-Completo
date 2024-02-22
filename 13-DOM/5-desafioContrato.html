@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="button"]{
+        width: 50px;
+    }
+    textarea{
+        width: 200px;
+    }
+</style>
+<body>
+    <h1>Contrato Legal</h1>
+    <div>
+        <label for="aceito">Li e aceito o Contrato</label>
+        <input type="checkbox" id="aceito" onchange="aceitar()">
+    </div>
+    <textarea name="contrato" id="contrato" cols="30" rows="10">Contrato.......</textarea>
+    <input type="button" value="Enviar" disabled id="enviar">
+
+
+
+    <script>
+        function aceitar(){
+            let check = document.getElementById("aceito")
+            let enviar = document.getElementById("enviar")
+            if(check.checked){
+                enviar.disabled = false
+            } else{
+                enviar.disabled = true
+            }
+        }
+    </script>
+</body>
+</html>
