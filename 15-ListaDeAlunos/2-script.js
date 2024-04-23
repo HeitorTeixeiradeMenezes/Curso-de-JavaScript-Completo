@@ -43,24 +43,28 @@ function notaRemover() {
         ultimoLabel.remove();
     }
 }
-
 let obj = {
-    
-}
-let enviar = function(){
-    let arr = []
-    let inputs = document.querySelectorAll(".flex .flex input");
-    let inputs2 = Array.from(inputs)
-    let verificado = inputs2.every(function(el){
-        return typeof el.value === "string" && el.value != ""
-    })
-    if (verificado) {
-        console.log(arr)
-        for(let i = 0; i <= inputs2.length; i++){
-            arr.push(inputs2[i].value)
-        }
-    }else{
-        window.alert("valor da nota ou nome n ao declarado")
-    }
-    
-}
+    arrays: []
+  };
+  
+  let getValueArr = function(){
+      let arr = []
+      let inputs = document.querySelectorAll(".flex .flex input");
+      let inputs2 = Array.from(inputs)
+      let verificado = inputs2.every(function(el){
+          return typeof el.value === "string" && el.value != ""
+      })
+      if (verificado) {
+          for(let i = 0; i < inputs2.length; i++){
+              arr.push(inputs2[i].value)
+          }
+          obj.arrays.push(arr);
+          return obj
+      } else {
+          window.alert("valor da nota ou nome não declarado")
+      }
+  }
+  
+  let enviar = function(){
+      console.log(getValueArr())
+  }
