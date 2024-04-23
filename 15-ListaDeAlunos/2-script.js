@@ -47,12 +47,20 @@ function notaRemover() {
 let obj = {
     
 }
-
-function enviar(){
-    let arr = [];
+let enviar = function(){
+    let arr = []
     let inputs = document.querySelectorAll(".flex .flex input");
-    if (inputs[0].value) {
-        arr.push(inputs[0].value);
+    let inputs2 = Array.from(inputs)
+    let verificado = inputs2.every(function(el){
+        return typeof el.value === "string" && el.value != ""
+    })
+    if (verificado) {
+        console.log(arr)
+        for(let i = 0; i <= inputs2.length; i++){
+            arr.push(inputs2[i].value)
+        }
+    }else{
+        window.alert("valor da nota ou nome n ao declarado")
     }
-    console.log(arr);
+    
 }

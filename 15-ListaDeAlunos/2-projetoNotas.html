@@ -23,6 +23,23 @@
         width: 60px;
         text-align: center;
     }
+    .tabela{
+        background-color: rgb(10, 133, 133);
+        width: 500px;
+        height: 500pxs;
+        border: 1px black solid;
+    }
+    thead{
+        border: 1px solid red;
+    }
+    tr{
+        border: 1px solid red;
+    }
+    td{
+        border: 1px solid orange;
+        background-color: rebeccapurple;
+        color: gray;
+    }
 </style>
 <body>
     <header>
@@ -44,8 +61,27 @@
                 <input type="button" id="nota-" value="Nota -" style="display: none;" onclick="notaRemover()">
             </div>
             <input type="button" value="Enviar" onclick="enviar()">
-
         </div>
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Nota 1</td>
+                        <td>Nota 2</td>
+                        <td>Media</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Isaias</td>
+                        <td>10.9</td>
+                        <td>6.1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="">a</a>
     </main>
     
     
