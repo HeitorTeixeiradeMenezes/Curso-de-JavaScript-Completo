@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <button id="btn1">botao 1</button>
+    <button id="btn2">botao 2</button>
+    <button id="btn3">botao 3</button>
+
+    <script>
+        const btn1 = document.getElementById("btn1")
+        const btn2 = document.getElementById("btn2")
+        const btn3 = document.getElementById("btn3")
+
+    // DOM level 0
+        function clicou(){
+            console.log("click btn1 funcao clicou")
+        }
+
+        btn1.onclick = function(){
+            console.log("click btn1 funcao anonima")
+        }
+        btn1.onclick = clicou
+    // DOM level 2
+        btn2.addEventListener("click", clicou)
+        btn2.addEventListener("click", function(){
+            console.log("click btn2 funcao anonima")
+        })
+    </script>
+</body>
+</html>
