@@ -48,8 +48,10 @@
             event.stopPropagation()
             console.log("botao 3 clicado")
         }, true)
-        document.addEventListener("click", function(){
-            console.log("Document clicado")
+        document.addEventListener("click", function(e){
+            console.log("Document clicado target e currentTarget =")
+            console.log(e.target)
+            console.log(e.currentTarget)
         }, false)
 
 
@@ -62,7 +64,9 @@
         })
         container2.addEventListener("click", function(e){
             if(e.target.nodeName === "BUTTON"){
-                console.log("Fui jambrolado pelo eventlistener do Container2",e.target)
+                console.log("Fui jambrolado pelo eventlistener do Container2 e.target =",e.target)
+                console.log("Current target =",e.currentTarget)
+                console.log("this =",this)
             }
         }, false)
 
