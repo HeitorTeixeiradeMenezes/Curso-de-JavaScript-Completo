@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .container2{
+        background-color: rebeccapurple;
+    }
+</style>
 <body>
     <h1>Eventos</h1>
     <button id="btn1">botao 1</button>
     <button id="btn2">botao 2</button>
     <button id="btn3">botao 3</button>
+    <hr>
+    <h1>Delegacao de eventos</h1>
+    <div class="container2">
+        <button type="button">botao 1</button>
+        <button type="button">botao 2</button>
+        <button type="button">botao 3</button>
+    </div>
 
     <script>
         const btn1 = document.getElementById("btn1")
@@ -30,6 +42,30 @@
         btn2.addEventListener("click", function(){
             console.log("click btn2 funcao anonima")
         })
+
+        btn3.addEventListener("click", function(event){
+            console.log(event)
+            event.stopPropagation()
+            console.log("botao 3 clicado")
+        }, true)
+        document.addEventListener("click", function(){
+            console.log("Document clicado")
+        }, false)
+
+
+        const container2 = document.querySelector(".container2")
+        const btns = document.querySelectorAll(".container2 button")
+        const actionbtns = [...btns].forEach(function(btns){
+            btns.addEventListener("click", function(e){
+                console.log("fui jambrolado pelo eventlistener BTN", e.target)
+            }, false)
+        })
+        container2.addEventListener("click", function(e){
+            if(e.target.nodeName === "BUTTON"){
+                console.log("Fui jambrolado pelo eventlistener do Container2",e.target)
+            }
+        }, false)
+
     </script>
 </body>
 </html>
