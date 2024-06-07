@@ -16,14 +16,13 @@
             display: none;
         }
         .displayon{
-            display: block;
+            display: flex;
         }
         .flex{
             display: flex;
             flex-direction: column;
         }
         .alert{
-            display: flex;
             position: fixed;
             align-items: start;
             background-color: rgba(255, 0, 0, 0.801);
@@ -75,7 +74,7 @@
             outline: 0;
         }
     </style>
-    <div class="alert">
+    <div class="alert displayon" id="alert">
         <h1>Um ou mais campos nao foram preenchidos</h1>
         <input type="button" value="x">
     </div>
@@ -87,7 +86,7 @@
             <br>
             <label for="descricao">Descrição da tarefa</label><br>
             <textarea name="" id="descricao" class="noFocus" rows="10" maxlength="250" required></textarea>
-            <div>250 caracteres</div>
+            <div><b id="caracteresNumb">250</b> caracteres</div>
             <input type="checkbox" name="" id="check" required>
             <label for="check">Me comprometo a enviar a tarefa o mais rapido possivel</label> <br>
             <div class="flex"><input type="submit"></div>
@@ -95,6 +94,37 @@
     </div>
 
     <script>
+        const displayoff = function(loc){
+            loc.classList.add('displayoff')
+            loc.classList.remove('displayon')
+        }
+        const displayon = function(loc){
+            loc.classList.remove('displayoff')
+            loc.classList.add('displayon')
+        }
+        const xBtn = document.querySelector("#alert input")
+        xBtn.addEventListener("click", function(e){
+            const aviso = document.querySelector("#alert")
+            displayoff(aviso)
+        })
+        let caracteresCounter = () =>{
+            const descricao = document.querySelector("#descricao")
+            return descricao.value.length 
+        }
+        let caracteresEdit = () => {
+            const descricao = document.querySelector("#descricao");
+            const caracteresNumb = document.querySelector("#caracteresNumb");
+            const maxLength = descricao.getAttribute("maxlength");
+            const remainingChars = maxLength - caracteresCounter();
+            caracteresNumb.textContent = remainingChars;
+        }
+
+        const descricao = document.querySelector("#descricao");
+        descricao.addEventListener("input", function() {
+            caracteresEdit();
+        });
+
+        
         
     </script>
 </body>
