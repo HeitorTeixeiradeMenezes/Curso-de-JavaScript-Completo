@@ -92,8 +92,24 @@
             <div class="flex"><input type="submit" onclick="enviar()"></div>
         </form>
     </div>
-
     <script>
+        const title = document.querySelector("#titulo")
+        const descricao = document.querySelector("#descricao");
+        const caracteresNumb = document.querySelector("#caracteresNumb");
+        const checkbox = document.querySelector("#check")
+        const aviso = document.querySelector("#alert")
+        const xBtn = document.querySelector("#alert input")
+        let caracteresCounter = () =>{
+            return descricao.value.length 
+        }
+        let caracteresEdit = () => {
+            const maxLength = descricao.getAttribute("maxlength");
+            const remainingChars = maxLength - caracteresCounter();
+            caracteresNumb.textContent = remainingChars;
+        }
+        descricao.addEventListener("input", function() {
+            caracteresEdit();
+        });
         const displayoff = function(loc){
             loc.classList.add('displayoff')
             loc.classList.remove('displayon')
@@ -102,46 +118,21 @@
             loc.classList.remove('displayoff')
             loc.classList.add('displayon')
         }
-        const aviso = document.querySelector("#alert")
-        const xBtn = document.querySelector("#alert input")
         xBtn.addEventListener("click", function(e){
             displayoff(aviso)
         })
-        let caracteresCounter = () =>{
-            const descricao = document.querySelector("#descricao")
-            return descricao.value.length 
-        }
-        let caracteresEdit = () => {
-            const descricao = document.querySelector("#descricao");
-            const caracteresNumb = document.querySelector("#caracteresNumb");
-            const maxLength = descricao.getAttribute("maxlength");
-            const remainingChars = maxLength - caracteresCounter();
-            caracteresNumb.textContent = remainingChars;
-        }
-
-        const descricao = document.querySelector("#descricao");
-        descricao.addEventListener("input", function() {
-            caracteresEdit();
-        });
-
         const verify = () => {
-            const checkbox = document.querySelector("#check")
-            const title = document.querySelector("#titulo")
             if(title.value != "" && descricao.value != "" && checkbox.checked){
                 return true
             }else{
                 return false
             }
         }
-
         const enviar =()=>{
             if(verify() === false){
                 displayon(aviso)
             }
         }
-
-        
-        
     </script>
 </body>
 </html>
