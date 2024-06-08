@@ -74,7 +74,7 @@
             outline: 0;
         }
     </style>
-    <div class="alert displayon" id="alert">
+    <div class="alert displayoff" id="alert">
         <h1>Um ou mais campos nao foram preenchidos</h1>
         <input type="button" value="x">
     </div>
@@ -82,14 +82,14 @@
         <h1>Cadastre uma nova tarefa</h1>
         <form action="">
             <label for="titulo">Título</label><br>
-            <input type="text" id="titulo" required class="noFocus">
+            <input type="text" id="titulo" class="noFocus" required>
             <br>
             <label for="descricao">Descrição da tarefa</label><br>
             <textarea name="" id="descricao" class="noFocus" rows="10" maxlength="250" required></textarea>
             <div><b id="caracteresNumb">250</b> caracteres</div>
             <input type="checkbox" name="" id="check" required>
             <label for="check">Me comprometo a enviar a tarefa o mais rapido possivel</label> <br>
-            <div class="flex"><input type="submit"></div>
+            <div class="flex"><input type="submit" onclick="enviar()"></div>
         </form>
     </div>
 
@@ -102,9 +102,9 @@
             loc.classList.remove('displayoff')
             loc.classList.add('displayon')
         }
+        const aviso = document.querySelector("#alert")
         const xBtn = document.querySelector("#alert input")
         xBtn.addEventListener("click", function(e){
-            const aviso = document.querySelector("#alert")
             displayoff(aviso)
         })
         let caracteresCounter = () =>{
@@ -123,6 +123,22 @@
         descricao.addEventListener("input", function() {
             caracteresEdit();
         });
+
+        const verify = () => {
+            const checkbox = document.querySelector("#check")
+            const title = document.querySelector("#titulo")
+            if(title.value != "" && descricao.value != "" && checkbox.checked){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        const enviar =()=>{
+            if(verify() === false){
+                displayon(aviso)
+            }
+        }
 
         
         
