@@ -82,14 +82,14 @@
         <h1>Cadastre uma nova tarefa</h1>
         <form action="">
             <label for="titulo">Título</label><br>
-            <input type="text" id="titulo" class="noFocus" required>
+            <input type="text" id="titulo" class="noFocus">
             <br>
             <label for="descricao">Descrição da tarefa</label><br>
-            <textarea name="" id="descricao" class="noFocus" rows="10" maxlength="250" required></textarea>
+            <textarea name="" id="descricao" class="noFocus" rows="10" maxlength="250"></textarea>
             <div><b id="caracteresNumb">250</b> caracteres</div>
-            <input type="checkbox" name="" id="check" required>
+            <input type="checkbox" name="" id="check">
             <label for="check">Me comprometo a enviar a tarefa o mais rapido possivel</label> <br>
-            <div class="flex"><input type="submit" onclick="enviar()"></div>
+            <div class="flex"><input type="submit"></div>
         </form>
     </div>
     <script>
@@ -99,6 +99,7 @@
         const checkbox = document.querySelector("#check")
         const aviso = document.querySelector("#alert")
         const xBtn = document.querySelector("#alert input")
+        const enviar = document.querySelector('input[type="submit"]')
         let caracteresCounter = () =>{
             return descricao.value.length 
         }
@@ -128,11 +129,13 @@
                 return false
             }
         }
-        const enviar =()=>{
-            if(verify() === false){
+        enviar.addEventListener("click", function(e){
+            if(verify()==false){
                 displayon(aviso)
+                e.preventDefault()
             }
-        }
+        })
+        
     </script>
 </body>
 </html>
