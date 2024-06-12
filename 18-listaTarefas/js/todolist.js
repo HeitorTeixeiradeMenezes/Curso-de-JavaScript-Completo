@@ -31,6 +31,14 @@ const createLi = (tarefa) =>{
     return lis
 }
 
+const loadArrys = function(){
+    todoList.textContent = ""
+    arrLis.forEach(function(e){
+        todoList.appendChild(createLi(e.titulo))
+        console.log(e)
+    })
+}
+
 const pushArrObj = function(tarefa){
     arrLis.push({
         titulo: tarefa,
@@ -45,11 +53,12 @@ submit.addEventListener("click", function(e){
     e.preventDefault()
     if(newItem.value != ""){
     pushArrObj(newItem.value)
-    todoList.appendChild(createLi(newItem.value))
+    loadArrys()
     newItem.focus()
     } else{
         window.alert("preecha o Titulo")
     }
 })
+loadArrys()
 
 // Mudar o estilo do append child para ler os objs do Array
