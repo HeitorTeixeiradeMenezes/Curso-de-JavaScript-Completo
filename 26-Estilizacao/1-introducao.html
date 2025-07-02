@@ -5,7 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<style>
+    div{
+        background-color: blueviolet !important;
+        padding: 2em;
+    }
+</style>
 <body>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam porro vitae enim repellat distinctio reprehenderit at voluptatem facilis aspernatur neque inventore culpa facere sunt delectus, rerum dolore dignissimos aliquam aperiam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae itaque, placeat quibusdam rem sequi odit laudantium temporibus corporis reprehenderit. Minima impedit quisquam quae temporibus cumque non ipsa inventore soluta dolor.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptates enim ab distinctio obcaecati sint ipsa iste quasi aliquid rerum, nostrum atque natus, corporis temporibus porro ducimus? Voluptate, labore perferendis!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero praesentium quos, asperiores facilis expedita nihil, pariatur aperiam qui molestias eligendi sed atque, nostrum dolorum deserunt dolorem impedit nemo. Neque, excepturi.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, facilis. Exercitationem, corporis tenetur, inventore eos incidunt sequi rerum tempore, enim molestiae quam aliquam voluptas labore doloribus veniam optio porro neque?</p>
+    <div style="background-color: red; margin-top: 700px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis temporibus esse nam, voluptatum corrupti fugiat labore harum eius inventore et maxime repellat aut accusantium nemo totam eligendi eum cum!</div>
     
+
+    <script>
+        let div1 = document.querySelectorAll("div")[0]
+        console.log(div1.style.backgroundColor)
+        div1.style.backgroundColor = "#ddd"
+        console.log(div1.style.backgroundColor)
+        console.log("cor alterada para #ddd")
+        console.log(getComputedStyle(div1).backgroundColor)
+        console.log("cor azul violeta do style pq tem o !important")
+
+        console.log(div1.offsetHeight) // altura do elemento
+        console.log(div1.offsetWidth) // tamanho da width na tela
+        console.log(div1.offsetLeft) // distancia da esquerda da tela
+        console.log(div1.offsetTop) // distancia da altura da tela
+
+        console.log(div1.getBoundingClientRect())
+    </script>
 </body>
 </html>
